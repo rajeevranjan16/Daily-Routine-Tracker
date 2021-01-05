@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Header from "./layout/Header";
+import Footer from "./layout/Footer";
+import ShowRecord from "./components/ShowRecord";
+import CreateRecord from "./components/CreateRecord";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import UpdateRecord from "./components/UpdateRecord";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Header />
+        <Switch>
+          <Route path="/" exact>
+            <ShowRecord />
+          </Route>
+          <Route path="/create" exact>
+            <CreateRecord />
+          </Route>
+          <Route path="/edit/:id" component={UpdateRecord} />
+        </Switch>
+      </Router>
+      <Footer />
     </div>
   );
 }
