@@ -1,3 +1,4 @@
+//importing the packages
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
@@ -12,6 +13,8 @@ import { postRecord } from "./../api/api";
 import Design from "../ui/Design";
 import { useHistory } from "react-router-dom";
 
+//writing style content
+
 const useStyles = makeStyles((theme) => ({
   root: {
     "& > *": {
@@ -21,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
   },
   showForm: {
     backgroundColor: "grey",
-    width: "50%",
+    width: "49%",
     position: "absolute",
     marginLeft: "400px",
     borderRadius: "40px",
